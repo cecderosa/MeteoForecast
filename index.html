@@ -2,61 +2,86 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Libertinus+Mono&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+
     <title>Meteo App</title>
   </head>
   <body>
-    <header>
-      <h1>NotHereCast</h1>
-      <h2>Because Alberta.</h2>
+    <div class="weather-app">
+      <header>
+        <h1>NotHereCast</h1>
+        <h2>Because Alberta.</h2>
 
-      <h3>
-        Find out who is having a better day. 
-      </h3>
-      <form>
-        <input type="search" placeholder="Where you (unfortunately) are now..." required />
-        <input type="sumbit" value="Why" />
-      </form>
-     <h3>Type in anywhere you’d rather be.</h3>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="sumbit" value="Take me there" />
-      </form>
-    </header>
-    <main>
-        <div>
-            <h1>Edmonton</h1>
-            <p>Clear
-            </br> 
-            Humidity: 60%
-         </br>
-         Wind: 3.0km/h
-            </p>
-         </div>
-         <div> 25°C</div>
-         
-        <div>
-       <h1>Honolulu</h1>
-       <p>Clear
-       </br> 
-       Humidity: 60%
-    </br>
-    Wind: 3.0km/h
-       </p>
+        <h3>Find out who is having a better day.</h3>
+
+        <form class="search-form-here">
+          <input
+            type="search"
+            placeholder="Where you (unfortunately) are now..."
+            required
+            class="search-form-input-here"
+          />
+          <input type="submit" value="Why" class="search-form-button-here" />
+        </form>
+
+        <h3>Type in anywhere you’d rather be.</h3>
+        <form class="search-form-there">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-form-input-there"
+          />
+          <input
+            type="submit"
+            value="Take me there"
+            class="search-form-button-there"
+          />
+        </form>
+      </header>
+
+      <main class="results">
+        <div class="here">
+          <h2>Edmonton</h2>
+          <p>
+            Clear<br />
+            Humidity: 60%<br />
+            Wind: 3.0 km/h
+          </p>
+          <div class="temp">-12°C</div>
+        </div>
+
+        <div class="there">
+          <h2>Honolulu</h2>
+          <p>
+            Clear<br />
+            Humidity: 60%<br />
+            Wind: 3.0 km/h
+          </p>
+          <div class="temp">25°C</div>
+        </div>
+      </main>
+      <footer>
+        Built by
+        <a href="https://github.com/cecderosa" target="_blank"
+          >Cecilia De Rosa</a
+        >
+        open sourced on
+        <a href="https://github.com/cecderosa/MeteoForecast" target="_blank">
+          Github
+        </a>
+        and hosted on
+        <a href="https://meteonizzastudios.netlify.app/" target="_blank">
+          Netlify
+        </a>
+      </footer>
     </div>
-    <div> 25°C</div>
-    
-    </main>
-    <footer>
-      Built by
-      <a href="https://github.com/cecderosa" target="_blank">Cecilia De Rosa</a>
-      open sourced on
-      <a href="https://github.com/cecderosa/MeteoForecast" target="_blank">
-        Github
-      </a>
-      and hosted on
-      <a href="https://meteonizzastudios.netlify.app/" target="_blank">
-        Netlify
-      </a>
-    </footer>
   </body>
 </html>

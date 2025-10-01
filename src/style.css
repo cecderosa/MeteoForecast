@@ -1,0 +1,128 @@
+/* Base */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f6f7;
+  color: #1c1f26;
+  font-family: "Bitter", serif;
+}
+
+/* App container */
+.weather-app {
+  max-width: 600px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #e2e6e9;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(28, 31, 38, 0.12);
+}
+
+/* Headings */
+h1 {
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+h2,
+h3 {
+  margin: 12px 0 8px;
+}
+
+/* Forms (both) */
+.search-form-here,
+.search-form-there {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.search-form-input-here,
+.search-form-input-there {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #cfd5da;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.search-form-input-here:focus,
+.search-form-input-there:focus {
+  outline: none;
+  border-color: #2ca8a0;
+  box-shadow: 0 0 0 3px rgba(44, 168, 160, 0.25);
+}
+
+.search-form-button-here,
+.search-form-button-there {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #ffd447;
+  color: #1c1f26;
+  font-weight: 700;
+  cursor: pointer;
+}
+.search-form-button-here:hover,
+.search-form-button-there:hover {
+  background: #ff7b47;
+}
+
+/* Results grid + cards */
+.results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.results > div {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 3px 10px rgba(28, 31, 38, 0.08);
+}
+.here {
+  border-top: 4px solid #9aa3a9;
+} /* Grey */
+.there {
+  border-top: 4px solid #2ca8a0;
+} /* Teal */
+
+.results p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.temp {
+  margin-top: 8px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+/* Footer */
+footer {
+  margin-top: 16px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+footer a {
+  color: #3b6ea8;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .search-form-here,
+  .search-form-there {
+    flex-direction: column;
+  }
+  .results {
+    grid-template-columns: 1fr;
+  }
+  .temp {
+    font-size: 34px;
+  }
+}
