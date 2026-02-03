@@ -10,62 +10,76 @@
     />
 
     <link rel="stylesheet" href="src/style.css" />
-
+<script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <title>Meteo App</title>
   </head>
   <body>
     <div class="weather-app">
       <header>
-        <h1>NotHereCast</h1>
+        <h1>
+          <span class="word-not">Not</span>
+          <span class="word-here">Here</span>
+          <span class="word-cast">Cast</span>
+        </h1>
         <h2>Because Alberta.</h2>
 
         <h3>Find out who is having a better day.</h3>
 
-        <form class="search-form-here">
+        <form class="search-form-1" id="search-form-1">
           <input
             type="search"
             placeholder="Where you (unfortunately) are now..."
             required
-            class="search-form-input-here"
+            id="search-form-input-1"
+            class="search-form-input-1"
           />
           <input type="submit" value="Why" class="search-form-button-here" />
         </form>
 
-        <h3>Type in anywhere you’d rather be.</h3>
-        <form class="search-form-there">
+        <h3>Where you’d rather be.</h3>
+        <form class="search-form-2" id="search-form-2">
           <input
             type="search"
-            placeholder="Enter a city..."
+            id="search-form-input-2" 
+            placeholder="Enter a city..." 
             required
-            class="search-form-input-there"
+            class="search-form-input-2"
           />
           <input
             type="submit"
             value="Take me there"
-            class="search-form-button-there"
+            class="search-form-button-2"
           />
         </form>
       </header>
 
       <main class="results">
         <div class="here">
-          <h2>Edmonton</h2>
-          <p>
-            Clear<br />
-            Humidity: 60%<br />
-            Wind: 3.0 km/h
-          </p>
-          <div class="temp">-12°C</div>
+          <div class="city-block">
+            <div>
+              <h2 id="city1">Edmonton</h2>
+              <p>
+                Clear<br />
+                Humidity: 60%<br />
+                Wind: 3.0 km/h
+              </p>
+            </div>
+            <div class="temp">-12°C</div>
+          </div>
         </div>
 
         <div class="there">
-          <h2>Honolulu</h2>
-          <p>
-            Clear<br />
-            Humidity: 60%<br />
-            Wind: 3.0 km/h
-          </p>
-          <div class="temp">25°C</div>
+          <div class="city-block">
+            <div>
+              <h2 id="city2">Honolulu</h2>
+              <p>
+                Clear<br />
+                Humidity: 60%<br />
+                Wind: 3.0 km/h
+              </p>
+            </div>
+            <div class="temp">25°C</div>
+          </div>
         </div>
       </main>
       <footer>
@@ -83,5 +97,6 @@
         </a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

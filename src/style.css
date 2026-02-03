@@ -1,34 +1,72 @@
-/* Base */
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #f5f6f7;
-  color: #1c1f26;
+  background: #f5f6f7; /* soft cloudy sky */
+  color: #2d3439; /* softer charcoal ink */
   font-family: "Bitter", serif;
 }
 
-/* App container */
 .weather-app {
   max-width: 600px;
   margin: 32px auto;
   padding: 24px;
-  background: #e2e6e9;
+  background: #e2e6e9; /* overcast shell */
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(28, 31, 38, 0.12);
+  box-shadow: 0 6px 20px rgba(45, 52, 57, 0.12);
 }
 
-/* Headings */
-h1 {
-  margin: 0 0 8px;
-  font-weight: 800;
+/* Title + subtitle */
+header h1 {
+  font-size: 64px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1.5px;
+  word-spacing: 4px;
+  line-height: 1;
+  position: relative;
 }
-h2,
+.word-not {
+  color: #e76f51;
+}
+.word-here {
+  color: #8d99a6;
+}
+.word-cast {
+  color: #457b9d;
+}
+
+header h1::after {
+  content: "";
+  display: block;
+  width: 70%;
+  max-width: 420px;
+  height: 3px;
+  margin: 10px auto 0;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+
+header h2 {
+  font-size: 20px;
+  text-align: center;
+  margin: 12px 0 24px;
+  font-weight: 800;
+  font-style: italic;
+  color: #567579; /* teal-grey */
+}
+
+/* Section headings */
 h3 {
   margin: 12px 0 8px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #36495c; /* soft charcoal blue */
 }
 
-/* Forms (both) */
+/* Forms */
 .search-form-here,
 .search-form-there {
   display: flex;
@@ -44,13 +82,14 @@ h3 {
   border-radius: 10px;
   background: #fff;
   font-size: 14px;
+  color: #2d3439;
 }
 
 .search-form-input-here:focus,
 .search-form-input-there:focus {
   outline: none;
-  border-color: #2ca8a0;
-  box-shadow: 0 0 0 3px rgba(44, 168, 160, 0.25);
+  border-color: #2a9d8f;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.25);
 }
 
 .search-form-button-here,
@@ -58,55 +97,94 @@ h3 {
   padding: 12px 16px;
   border: none;
   border-radius: 10px;
-  background: #ffd447;
-  color: #1c1f26;
+  background: #ffd447; /* envy yellow */
+  color: #3d3a32; /* warm dark brown */
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.2s ease, transform 0.05s ease;
 }
 .search-form-button-here:hover,
 .search-form-button-there:hover {
-  background: #ff7b47;
+  background: #f4a261;
+}
+.search-form-button-here:active,
+.search-form-button-there:active {
+  transform: translateY(1px);
 }
 
-/* Results grid + cards */
+/* Results layout */
 .results {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 16px;
+  margin-top: 20px;
 }
-.results > div {
-  background: #fff;
-  border-radius: 12px;
-  padding: 14px;
-  box-shadow: 0 3px 10px rgba(28, 31, 38, 0.08);
-}
-.here {
-  border-top: 4px solid #9aa3a9;
-} /* Grey */
-.there {
-  border-top: 4px solid #2ca8a0;
-} /* Teal */
 
+/* Here vs There cards */
+.results .here {
+  background: #d8dee3;
+  border-top: 6px solid #8d99a6;
+  color: #3e4750; /* muted slate */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.05);
+}
+.results .here .temp {
+  color: #2f5b87;
+}
+
+.results .there {
+  background: #ffe8b5;
+  border-top: 6px solid #f4a261;
+  color: #4a3828; /* warm earthy ink */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(244, 162, 97, 0.25);
+}
+.results .there .temp {
+  color: #e76f51;
+}
+
+.city-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* City names */
+.results h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #36495c; /* soft charcoal blue */
+}
+
+/* Card details */
 .results p {
   margin: 0;
   font-size: 14px;
   line-height: 1.35;
+  color: #4f5c66; /* mid grey-blue */
 }
+
 .temp {
-  margin-top: 8px;
-  font-size: 40px;
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 900;
+  margin-left: 12px;
+  flex-shrink: 0;
 }
 
 /* Footer */
 footer {
-  margin-top: 16px;
+  margin-top: 20px;
   font-size: 12px;
-  opacity: 0.75;
+  opacity: 0.85;
+  text-align: center;
+  color: #5c6a70; /* muted grey */
 }
 footer a {
-  color: #3b6ea8;
+  color: #457b9d; /* dusty blue link */
   text-decoration: none;
 }
 footer a:hover {
@@ -122,7 +200,12 @@ footer a:hover {
   .results {
     grid-template-columns: 1fr;
   }
+  .city-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .temp {
-    font-size: 34px;
+    font-size: 36px;
+    margin-top: 8px;
   }
 }
