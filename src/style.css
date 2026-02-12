@@ -16,7 +16,7 @@ body {
   box-shadow: 0 6px 20px rgba(45, 52, 57, 0.12);
 }
 
-/* Title + subtitle */
+
 header h1 {
   font-size: 64px;
   font-weight: 900;
@@ -52,30 +52,38 @@ header h1::after {
 header h2 {
   font-size: 20px;
   text-align: center;
-  margin: 12px 0 24px;
+  margin: 12px 0 0px;
   font-weight: 800;
   font-style: italic;
-  color: #567579; /* teal-grey */
+  color: #567579; 
 }
 
-/* Section headings */
+h4 {
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight:600;
+  font-style: italic;
+  color: #4f6669; 
+}
+
 h3 {
-  margin: 12px 0 8px;
+  margin: 40px 0 8px;
   font-size: 20px;
   font-weight: 800;
-  color: #36495c; /* soft charcoal blue */
+  color: #36495c; 
 }
 
-/* Forms */
-.search-form-here,
-.search-form-there {
+
+.search-form-1,
+.search-form-2 {
   display: flex;
   gap: 8px;
   margin: 8px 0 12px;
 }
 
-.search-form-input-here,
-.search-form-input-there {
+.search-form-input-1,
+.search-form-input-2 {
   flex: 1;
   padding: 12px 14px;
   border: 1px solid #cfd5da;
@@ -85,15 +93,15 @@ h3 {
   color: #2d3439;
 }
 
-.search-form-input-here:focus,
-.search-form-input-there:focus {
+.search-form-input-1:focus,
+.search-form-input-2:focus {
   outline: none;
   border-color: #2a9d8f;
   box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.25);
 }
 
-.search-form-button-here,
-.search-form-button-there {
+.search-form-button-1,
+.search-form-button-2 {
   padding: 12px 16px;
   border: none;
   border-radius: 10px;
@@ -103,24 +111,24 @@ h3 {
   cursor: pointer;
   transition: background 0.2s ease, transform 0.05s ease;
 }
-.search-form-button-here:hover,
-.search-form-button-there:hover {
+.search-form-button-1:hover,
+.search-form-button-2:hover {
   background: #f4a261;
 }
-.search-form-button-here:active,
-.search-form-button-there:active {
+.search-form-button-1:active,
+.search-form-button-2:active {
   transform: translateY(1px);
 }
 
-/* Results layout */
+
 .results {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
-/* Here vs There cards */
+
 .results .here {
   background: #d8dee3;
   border-top: 6px solid #8d99a6;
@@ -152,20 +160,20 @@ h3 {
   gap: 12px;
 }
 
-/* City names */
+
 .results h2 {
   margin: 0 0 6px;
   font-size: 20px;
   font-weight: 900;
-  color: #36495c; /* soft charcoal blue */
+  color: #36495c; 
 }
 
-/* Card details */
+
 .results p {
   margin: 0;
   font-size: 14px;
   line-height: 1.35;
-  color: #4f5c66; /* mid grey-blue */
+  color: #4f5c66; 
 }
 
 .temp {
@@ -175,26 +183,26 @@ h3 {
   flex-shrink: 0;
 }
 
-/* Footer */
+
 footer {
   margin-top: 20px;
   font-size: 12px;
   opacity: 0.85;
   text-align: center;
-  color: #5c6a70; /* muted grey */
+  color: #5c6a70; 
 }
 footer a {
-  color: #457b9d; /* dusty blue link */
+  color: #457b9d; 
   text-decoration: none;
 }
 footer a:hover {
   text-decoration: underline;
 }
 
-/* Mobile */
+
 @media (max-width: 560px) {
-  .search-form-here,
-  .search-form-there {
+  .search-form-1,
+  .search-form-2 {
     flex-direction: column;
   }
   .results {
