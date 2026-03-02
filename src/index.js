@@ -107,8 +107,64 @@ function handleSearchSubmit2(event) {
   searchCity2(searchInput2.value);
 }
 
-let searchFormElement1 = document.querySelector("#search-form-1");
+
+function displayForecast1() {
+
+let days1=["Tue", "Wed", "Thu"];
+ let forecast1Html= "";
+
+days1.forEach(function(day) {
+  forecast1Html=
+  forecast1Html +
+`<div class="weather-forecast-day-1"> 
+            <div class="weather-forecast-date" >${day}</div> 
+            <div class="weather-forecast-icon">☀️</div>
+            <div class="weather-forecast-temperatures"> 
+              <div class="weather-forecast-temperature"> <strong>15°C</strong> </div> 
+            <div class="weather-forecast-temperature">9°C</div>    </div>
+          </div>`
+          ;
+
+}); 
+
+let forecast1Element= document.querySelector("#forecast1");
+forecast1Element.innerHTML= forecast1Html;
+
+  
+}
+
+function displayForecast2 (day) {
+ 
+ let days2 =["Tue", "Wed", "Thu"];
+ let forecast2Html= "";
+
+ days2.forEach(function(day) {
+  forecast2Html =
+  forecast2Html + 
+ ` <div class="weather-forecast-day-1"> 
+            <div class="weather-forecast-date" >${day}</div> 
+            <div class="weather-forecast-icon">☀️</div>
+            <div class="weather-forecast-temperatures"> 
+              <div class="weather-forecast-temperature"> <strong>15°C</strong> </div> 
+            <div class="weather-forecast-temperature">9°C</div>    </div>
+          </div>`
+          ; 
+}); 
+let forecast2Element= document.querySelector("#forecast2");
+forecast2Element.innerHTML= forecast2Html;
+}
+
+
+
+
+
+
+          let searchFormElement1 = document.querySelector("#search-form-1");
 searchFormElement1.addEventListener("submit", handleSearchSubmit1);
 
 let searchFormElement2 = document.querySelector("#search-form-2");
 searchFormElement2.addEventListener("submit", handleSearchSubmit2);
+
+displayForecast1();
+
+displayForecast2();
