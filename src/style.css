@@ -146,7 +146,10 @@ h3 {
   align-items: flex-start;
 }
 
-
+.results .here,
+.results .there {
+  padding: 16px 24px 28px 16px;
+}
 .results .here {
   flex:1 1 0;
   min-width: 0;
@@ -232,11 +235,12 @@ h3 {
 }
 
 .weather-forecast {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:14px;
-  margin-top:auto;
-  padding-right: 25px
+ display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 .weather-forecast-day-1,
 .weather-forecast-day-2,
@@ -245,6 +249,7 @@ h3 {
   flex-direction:column;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
  
 min-height: 120px;
   color:rgba(39,33,66);
@@ -254,8 +259,9 @@ min-height: 120px;
 }
 
 .weather-forecast-icon {
-  font-size:38px;
+ font-size: 100px;
   text-align: center;
+  line-height: 1;
 }
 
 .weather-forecast-temperatures {
